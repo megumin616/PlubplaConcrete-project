@@ -1,0 +1,40 @@
+:root {
+    --color-text: rgb(255, 255, 255);
+    --color-bg: rgb(73, 164, 255);
+    --color-blue: rgb(0, 82, 247);
+}
+
+.section-home-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-home-products h1 {
+    margin: 2rem 0;
+}
+.section-home-products-items {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 15rem;
+    grid-row-gap: 3rem;
+}
+.products-item {
+    text-align: center;
+    width: 30rem;
+    overflow-wrap: break-word;
+    white-space: normal; 
+}
+.products-item h2 {
+    margin-top: 0.8rem;
+}
+.products-item p {
+    margin: 1rem 0;
+}
+.products-item button {
+    background: var(--color-bg);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    width: 6rem;
+    height: 2rem;
+}

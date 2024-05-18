@@ -1,0 +1,25 @@
+:root {
+    --color-text: rgb(255, 255, 255);
+    --color-bg: rgb(73, 164, 255);
+    --color-blue: rgb(0, 82, 247);
+}
+
+
+.section-home-seminar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-home-seminar h1 {
+    margin: 2rem 0;
+}
+.seminar-box {
+    background: linear-gradient(to right, var(--color-bg) 40%, rgb(238, 245, 255));
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    width: 90vw;
+}
+.seminar-box img {
+    margin: 3rem 0;
+}

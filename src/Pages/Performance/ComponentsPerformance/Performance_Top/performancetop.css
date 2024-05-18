@@ -1,0 +1,28 @@
+:root {
+    --color-text: rgb(255, 255, 255);
+    --color-bg: rgb(73, 164, 255);
+    --color-blue: rgb(0, 82, 247);
+}
+
+
+.section-performance-top {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    color: white;
+}
+.section-performance-top-text {
+    width: 80vw;
+}
+.section-performance-top h1 {
+    color: var(--color-bg);
+    font-size: 40px;
+    margin-top: 7rem;
+    margin-bottom: 1rem;
+}
+.section-performance-top p {
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+}

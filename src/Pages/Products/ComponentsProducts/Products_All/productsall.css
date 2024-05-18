@@ -1,0 +1,71 @@
+:root {
+    --color-text: rgb(255, 255, 255);
+    --color-bg: rgb(73, 164, 255);
+    --color-blue: rgb(0, 82, 247);
+}
+
+
+
+.section-products {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90vh;
+    background-size: cover;
+}
+.section-products-container {
+    width: 90vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    margin: 0 auto;
+    padding: 20px;
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    height: 25rem;
+    width: 70rem;
+    transition: transform 0.3s ease-in-out; /* เพิ่ม transition สำหรับการเปลี่ยน transform */
+}
+.product {
+    width: calc(25% - 10px);
+    margin: 5px;
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    background: linear-gradient(rgb(227, 242, 255), var(--color-bg) 60%);
+    border-radius: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+.product h2 {
+    font-size: 20px;
+    margin: 0.7rem 0;
+}
+.product img {
+    width: 220px;
+    height: 227px;
+}
+.section-products-pagination {
+    width: 70vw;
+    display: flex;
+    justify-content: end;
+}
+.pagination {
+    margin-top: 2.5rem;
+}
+.pagination button {
+    margin-right: 5px;
+    transition: background-color 0.3s ease-in-out; /* เพิ่ม transition สำหรับการเปลี่ยนสีพื้นหลังของปุ่ม */
+}
+.products-button-number {
+    width: 2rem;
+    height: 2rem;
+}

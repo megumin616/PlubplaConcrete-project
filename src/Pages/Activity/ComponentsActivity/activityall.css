@@ -1,0 +1,61 @@
+:root {
+    --color-text: rgb(255, 255, 255);
+    --color-bg: rgb(73, 164, 255);
+    --color-blue: rgb(0, 82, 247);
+}
+
+
+
+.section-activity-all {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* position: relative; */
+}
+.section-activity-all h1 {
+    color: var(--color-bg);
+    margin: 2rem 0;
+    text-align: start;
+    padding-left: 8rem;
+}
+.section-activity-all-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.section-activity-pagination {
+    /* position: absolute;
+    right: 0;
+    bottom: 0; */
+    text-align: end;
+    margin-right: 6rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.container-activities {
+    /* display: flex;
+    justify-content: space-around; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 2rem;
+    width: 90vw;
+    margin: 0 auto;
+}
+.activity {
+    margin: 0 2rem;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px 2px gray;
+}
+.activity h2 {
+    text-align: start;
+}
+.activity p {
+    text-align: end;
+    margin-top: 0.8rem;
+}
+.pagination button {
+    width: 2.7rem;
+    height: 2.6rem;
+    font-size: 18px;
+    font-weight: 500;
+}

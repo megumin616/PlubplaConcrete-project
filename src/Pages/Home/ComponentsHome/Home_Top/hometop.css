@@ -1,0 +1,72 @@
+:root {
+    --color-text: rgb(255, 255, 255);
+    --color-bg: rgb(73, 164, 255);
+    --color-blue: rgb(0, 82, 247);
+}
+
+
+.section-home {
+
+}
+
+.section-home-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90vh;
+    background-size: cover;
+}
+.section-home-top-box1 h1 {
+    font-size: 70px;
+    margin-bottom: 1rem;
+    background: linear-gradient(var(--color-bg) 60%, rgb(251, 253, 255));
+    -webkit-background-clip: text; /* For Safari/Chrome */
+    background-clip: text;
+    color: transparent; /* จำเป็นต้องทำให้สีข้อความเป็นโปร่งใส */
+}
+.section-home-top-box1 p {
+    color: white;
+    font-size: 30px;
+    margin: 1rem 0;
+}
+.section-home-top-box1 button {
+    background: var(--color-bg);
+    border: none;
+    width: 8.5rem;
+    height: 3rem;
+    border-radius: 25px;
+    font-size: 25px;
+}
+.section-home-top-box1 .white-link {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.section-home-top-box2 img {
+    width: 760px;
+    height: 440px;
+}
+.section-home-top-box2 p {
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 20px;
+}
+
+
+
+/* screen media  */
+@media (min-width: 1230px) and (max-width: 1600px) {
+    .section-home-top-box1 h1 {
+        font-size: 60px;
+    }
+    .section-home-top-box1 p {
+        font-size: 20px;
+    }
+    .section-home-top-box2 img {
+        width: 560px;
+        height: 340px;
+    }
+}

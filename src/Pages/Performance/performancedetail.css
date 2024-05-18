@@ -1,0 +1,34 @@
+:root {
+    --color-text: rgb(255, 255, 255);
+    --color-bg: rgb(73, 164, 255);
+    --color-blue: rgb(0, 82, 247);
+}
+
+
+.section-performance-detail {
+    text-align: center;
+    margin: 3rem;
+    height: 100vh;
+}
+.performance-detail-img {
+    width: 90vw;
+    margin: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.performance-detail-content {
+    margin: 1.5rem 2rem;
+    text-align: start;
+}
+.performance-detail-content p {
+    margin: 1.4rem 0;
+}
+.performance-detail-content button {
+    background: var(--color-bg);
+    border: none;
+    border-radius: 25px;
+    width: 6rem;
+    height: 2.3rem;
+    color: white;
+    font-size: 18px;
+}
