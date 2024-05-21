@@ -5,6 +5,9 @@ import "../Home_Top/hometop.css";
 // image
 import Background from "../../../../assets/Images/Background/backgroundHome.png";
 
+//video
+// import video from "../../../../assets/Videos/PPC_Final_S.mp4"
+
 const styles = {
   backgroundImage: `url(${Background})`,
   backgroundSize: "cover",
@@ -45,6 +48,9 @@ export default function HomeTop() {
             <img
               src="https://images.unsplash.com/photo-1715604723666-866e18a5d257?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             />
+            {/* <video width={760} height={440} controls>
+              <source src={video} type="video/mp4"/>
+            </video> */}
           </div>
         </div>
       </div>

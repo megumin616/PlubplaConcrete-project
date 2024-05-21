@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../Contact/contact.css";
 import Navbar from "../../Components/Navbar/Navbar";
-import Footer from "../../Components/Footer/Footer"
+import Footer from "../../Components/Footer/Footer";
+
 
 // image icon
 import icon1 from "../../assets/Images/Icons/icon-contact-facebook.png";
 import icon2 from "../../assets/Images/Icons/icon-contact-line.png";
 import icon3 from "../../assets/Images/Icons/icon-contact-phone.png";
 import icon4 from "../../assets/Images/Icons/icon-contact-email.png";
-import map from "../../assets/Images/Background/google-map.png"
+import map from "../../assets/Images/Background/google-map.png";
 
 export default function Contact() {
+
   return (
     <>
       <Navbar />
@@ -38,13 +40,29 @@ export default function Contact() {
         </div>
 
         <div className="contact-map">
-          <img src={map}/>
+          {/* Map in iframe style  */}
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1590.3901577548418!2d102.14416045715312!3d12.61873914418054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sth!2sth!4v1716273380448!5m2!1sth!2sth"
+            width="600"
+            height="450"
+            style={{border: "0"}}
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+
+
+          {/* ไว้มาทำใหม่ในส่วนนี้  */}
+
+
           <div className="box-1"></div>
           <div className="box-2"></div>
-          <a href="https://maps.app.goo.gl/ZVcsr7hoWparjxSN8" target="_blank">Google map</a>
+          <a href="https://maps.app.goo.gl/ZVcsr7hoWparjxSN8" target="_blank">
+            Google map
+          </a>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

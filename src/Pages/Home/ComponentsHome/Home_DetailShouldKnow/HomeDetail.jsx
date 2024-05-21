@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Home_DetailShouldKnow/homedetail.css";
 
 // images
@@ -7,12 +7,38 @@ import detail_2 from "../../../../assets/Images/DetailShouldKnow/img-detail2.png
 import detail_3 from "../../../../assets/Images/DetailShouldKnow/img-detail3.png";
 import detail_4 from "../../../../assets/Images/DetailShouldKnow/img-detail4.png";
 
+import detail_full2 from "../../../../assets/Images/DetailShouldKnow/detail-full2.jpg"
+import detail_full3 from "../../../../assets/Images/DetailShouldKnow/5สิ่งที่ควรรู้.png"
+import detail_full4 from "../../../../assets/Images/DetailShouldKnow/detail-full4.jpg"
+
 import icon_1 from "../../../../assets/Images/Icons/icon-detail1.png";
 import icon_2 from "../../../../assets/Images/Icons/icon-detail2.png";
 import icon_3 from "../../../../assets/Images/Icons/icon-detail3.png";
 import icon_4 from "../../../../assets/Images/Icons/icon-detail4.png";
 
 export default function HomeDetail() {
+  const [isDetailVisible, setIsDetailVisible] = useState(false);
+  const [isDetailV_2, setIsDetail_2] = useState(false);
+  const [isDetailV_3, setIsDetail_3] = useState(false);
+  const [isDetailV_4, setIsDetail_4] = useState(false);
+
+  const toggleDetailVisibility = () => {
+      setIsDetailVisible(prevState => !prevState);
+  };
+  const toggleDetailV_2 = () => {
+      setIsDetail_2(prevState => !prevState);
+  };
+  const toggleDetailV_3 = () => {
+      setIsDetail_3(prevState => !prevState);
+  };
+  const toggleDetailV_4 = () => {
+      setIsDetail_4(prevState => !prevState);
+  };
+
+  const handleClickInsideFixedDetail = (e) => {
+    // หยุด Event Bubbling
+    e.stopPropagation();
+};
   return (
     <>
       <div className="section-home-details">
@@ -20,7 +46,7 @@ export default function HomeDetail() {
 
         <div className="section-home-details-items">
           {/* detail box 1 */}
-          <div className="details-item-box">
+          <div className="details-item-box" onClick={toggleDetailVisibility}>
             <div className="details-icon-box">
               <img src={icon_1} />
             </div>
@@ -35,11 +61,17 @@ export default function HomeDetail() {
             <div className="detail-img">
               <img src={detail_1} />
             </div>
+
+            <div className={`detail-img-fixed ${isDetailVisible ? 'visible' : ''}`}>
+              <img src={detail_1} onClick={handleClickInsideFixedDetail}/>
+            </div>
           </div>
+
+
           {/* detail box 2 */}
-          <div className="details-item-box">
+          <div className="details-item-box" onClick={toggleDetailV_2}>
             <div className="details-icon-box">
-              <img src={icon_2} />
+              <img src={icon_2}/>
             </div>
 
             <div className="detail-text">
@@ -52,9 +84,15 @@ export default function HomeDetail() {
             <div className="detail-img">
               <img src={detail_2} />
             </div>
+
+            <div className={`detail-img-fixed ${isDetailV_2 ? 'visible' : ''}`}>
+              <img src={detail_full2} onClick={handleClickInsideFixedDetail}/>
+            </div>
           </div>
+
+
           {/* detail box 3 */}
-          <div className="details-item-box">
+          <div className="details-item-box" onClick={toggleDetailV_3}>
             <div className="details-icon-box">
               <img src={icon_3} />
             </div>
@@ -69,9 +107,15 @@ export default function HomeDetail() {
             <div className="detail-img">
               <img src={detail_3} />
             </div>
+
+            <div className={`detail-img-fixed ${isDetailV_3 ? 'visible' : ''}`}>
+              <img src={detail_full3} onClick={handleClickInsideFixedDetail}/>
+            </div>
           </div>
+
+
           {/* detail box 4 */}
-          <div className="details-item-box">
+          <div className="details-item-box" onClick={toggleDetailV_4}>
             <div className="details-icon-box">
               <img src={icon_4} />
             </div>
@@ -86,6 +130,10 @@ export default function HomeDetail() {
 
             <div className="detail-img">
               <img src={detail_4} />
+            </div>
+
+            <div className={`detail-img-fixed ${isDetailV_4 ? 'visible' : ''}`}>
+              <img src={detail_full4} onClick={handleClickInsideFixedDetail}/>
             </div>
           </div>
         </div>

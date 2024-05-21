@@ -43,3 +43,31 @@
     width: 319px;
     height: 181px;
 }
+
+
+.detail-img-fixed {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100vw;
+    align-items: center;
+    max-height: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.774);
+    opacity: 0;
+    z-index: -999;
+    transition: opacity 0.3s ease;
+}
+.detail-img-fixed img {
+    width: auto;
+    height: 90vh;
+}
+.detail-img-fixed.visible {
+    opacity: 1;
+    z-index: 999;
+}
