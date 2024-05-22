@@ -63,3 +63,108 @@
     height: 40px;
     margin: 0 1rem;
 }
+.responsive-hr {
+    display: none;
+}
+
+
+
+@media only screen and (min-width:390px) and (max-width: 431px) {
+    .responsive-hr {
+        display: block;
+    }
+    .section-footer-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .section-footer-detail-box .section-footer-title h6{
+        text-align: center;
+    }
+    .section-footer-detail-box p {
+        margin: 0.5rem 0;
+    }
+    .section-footer-detail-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .section-footer-detail .section-footer-detail-box {
+        margin: 1rem 0;
+    }
+    .section-footer-content img {
+        margin-right: 0.4rem;
+    }
+
+
+    .section-footer-social {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+    .section-footer-social .footer-social-box {
+        width: 50px;
+        height: 50px;
+        /* margin: 0 auto; */
+    }
+    .section-footer-social .footer-social-box img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+
+
+@media only screen and (min-width: 319px) and (max-width: 389px) {
+    .responsive-hr {
+        display: block;
+    }
+    .section-footer-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .section-footer-detail-box .section-footer-title h6{
+        text-align: center;
+    }
+    .section-footer-detail-box p {
+        margin: 0.5rem 0;
+    }
+    .section-footer-detail-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .section-footer-detail .section-footer-detail-box {
+        margin: 1rem 0;
+    }
+    .section-footer-content img {
+        margin-right: 0.4rem;
+    }
+
+
+    .section-footer-social {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+    .section-footer-social .footer-social-box {
+        width: 50px;
+        height: 50px;
+        /* margin: 0 auto; */
+    }
+    .section-footer-social .footer-social-box img {
+        width: 25px;
+        height: 25px;
+    }
+}

@@ -31,6 +31,7 @@ export default function Footer() {
               ในจังหวัดจันทบุรีและตราด
             </p>
           </div>
+          <hr className="responsive-hr"/>
 
           <div className="section-footer-detail-box">
             <div className="section-footer-title">
@@ -41,6 +42,7 @@ export default function Footer() {
             <p>คอนกรีตผสมเสร็จ SCG</p>
             <p>อิฐบล็อก คอนกรีตบล็อก</p>
           </div>
+          <hr className="responsive-hr"/>
 
           <div className="section-footer-detail-box">
             <div className="section-footer-title">
@@ -50,6 +52,7 @@ export default function Footer() {
             <p>ผลงานของเรา</p>
             <p>กิจกรรมของเรา</p>
           </div>
+          <hr className="responsive-hr"/>
 
           <div className="section-footer-detail-box">
             <div className="section-footer-title">

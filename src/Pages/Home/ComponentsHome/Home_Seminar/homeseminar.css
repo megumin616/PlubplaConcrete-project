@@ -23,3 +23,30 @@
 .seminar-box img {
     margin: 3rem 0;
 }
+
+
+
+@media only screen and (min-width:390px) and (max-width: 431px) {
+    .seminar-box {
+        width: 100%;
+    }
+    .seminar-box img{
+        width: 7.5rem;
+    }
+    .section-home-seminar {
+        margin-bottom: 2rem;
+    }
+}
+
+
+@media only screen and (min-width: 319px) and (max-width: 389px) {
+    .seminar-box {
+        width: 100%;
+    }
+    .seminar-box img {
+        width: 5.5rem;
+    }
+    .section-home-seminar {
+        margin-bottom: 2rem;
+    }
+}

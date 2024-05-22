@@ -38,3 +38,32 @@
     width: 6rem;
     height: 2rem;
 }
+
+
+@media only screen and (min-width:390px) and (max-width: 431px) {
+    .section-home-products-items {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .products-item {
+        width: auto;
+        margin: 0 1rem;
+    }
+    .products-item img {
+        width: 350px;
+    }
+}
+
+@media only screen and (min-width: 319px) and (max-width: 389px) {
+    .section-home-products-items {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .products-item {
+        width: auto;
+        margin: 0 1rem;
+    }
+    .products-item img {
+        width: 300px;
+    }
+}

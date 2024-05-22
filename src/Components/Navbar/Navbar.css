@@ -45,7 +45,7 @@
         justify-content: center;
         gap: 1.5rem;
         transition: 0.5s;
-        transform: translateY(-50vh);
+        transform: translateY(-70vh);
         background: var(--color-bg);
     }
     .navbar .responsive_nav {
@@ -70,5 +70,13 @@
     .nav-close-btn img {
         width: 3.5rem;
         height: 3.5rem;
+    }
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 376px) {
+    .navbar-list-text {
+        height: 70%;
+        transform: translateY(-80vh);
     }
 }
