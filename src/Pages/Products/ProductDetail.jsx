@@ -1,28 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Products/productdetail.css";
 import Navbar from "../../Components/Navbar/Navbar";
 
 // image
 import product from "../../assets/Images/Products/แผ่นพื้นตันแผ่นพื้นคอนกรีตอัดแรงซีแพค.png";
+import product2 from "../../assets/Images/Products/คอนกรีตผสมเสร็จ-SCG.png";
 import Footer from "../../Components/Footer/Footer";
 import { Link } from "react-router-dom";
 
 const decoration = {
   textDecoration: "none",
-  color: 'white',
-  fontSize: '18px'
+  color: "white",
+  fontSize: "18px",
 };
 
 export default function ProductDetail() {
+  const [currentProduct, setCurrentProduct] = useState(1);
+  const productPerImg = 1;
+
+  const images = [
+    { id: 1, img: product },
+    { id: 1, img: product2 },
+    { id: 1, img: product },
+  ];
+
+  const indexLast = currentProduct * productPerImg;
+  const indexFirst = indexLast - productPerImg;
+
+  const currentImages = images.slice(indexFirst, indexLast);
+
+  const totalImg = Math.ceil(images.length / productPerImg);
+
+  const handleLast = () => {
+    setCurrentProduct((prevPage) => Math.max(prevPage - 1, 1));
+  };
+
+  const handleFirst = () => {
+    setCurrentProduct((prevPage) => Math.min(prevPage + 1, totalImg));
+  };
   return (
     <>
       <Navbar />
       <div className="section-productdetail">
         <div className="productdetail-img">
-          <img src={product} />
-          <img src={product} />
-          <img src={product} />
+          <img className="img-display" src={product} />
+          <img className="img-display" src={product} />
+          <img className="img-display" src={product} />
         </div>
+        {/* <div className="img-container-responsive"> */}
+        {currentImages.map((images) => (
+          <img className="img-responsive" src={images.img} key={images.id} />
+        ))}
+        {/* </div> */}
+        <div className="btn-group">
+          <button
+            className="btn-prev"
+            onClick={handleLast}
+            disabled={currentProduct === 1}
+          >
+            Prev
+          </button>
+          <button
+            className="btn-next"
+            onClick={handleFirst}
+            disabled={currentProduct === totalImg}
+          >
+            Next
+          </button>
+        </div>
+
         <div className="productdetail-content">
           <div className="box-content1">
             <h2>แผ่นพื้นตันแผ่นคอนกรีตอัดแรงซีแพค</h2>
@@ -53,6 +99,11 @@ export default function ProductDetail() {
               ทำให้ลูกค้ามั่นใจได้ว่าจะได้รับสินค้าและบริการที่มีความคุ้มค่าอย่างแน่นอน มาตรฐานซีแพค:: ควบคุมทุกขั้นตอนโดยทีมงานมืออาชีพ
               ทั้งเรื่องความแข็งแรงและความสวยงาม
             </p>
+            <button>
+              <Link to="/products" style={decoration}>
+                ย้อนกลับ
+              </Link>
+            </button>
           </div>
         </div>
       </div>
