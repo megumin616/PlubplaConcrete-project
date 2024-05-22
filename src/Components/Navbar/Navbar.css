@@ -21,3 +21,54 @@
 .navbar-list-text a:hover {
     color: rgb(252, 252, 95);
 }
+
+.navbar button {
+    visibility: hidden;
+    /* opacity: 0; */
+    display: none;
+}
+
+@media only screen and (max-width: 431px) {
+    .navbar button {
+        visibility: visible;
+        display: block;
+    }
+    .navbar-list-text {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        transition: 0.5s;
+        transform: translateY(-50vh);
+        background: var(--color-bg);
+    }
+    .navbar .responsive_nav {
+        transform: none;
+    }
+    .navbar .nav-dis-none {
+        /* display: none; */
+        border: none;
+        background: transparent;
+    }
+    .navbar-list-text .nav-close-btn {
+        position: absolute;
+        background: transparent;
+        border: none;
+        top: 0.5rem;
+        right: 1.8rem;
+    }
+    .nav-dis-none img {
+        width: 2rem;
+        height: 2rem;
+    }
+    .nav-close-btn img {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
