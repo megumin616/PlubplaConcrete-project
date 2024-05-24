@@ -27,6 +27,9 @@
 .aboutus-content-box-set p {
     font-size: 20px;
 }
+.aboutus-content-box-set span {
+    color: rgb(60, 135, 248);
+}
 
 
 /* section box 1  */
@@ -88,4 +91,114 @@
 .aboutus-content-box-2 img {
     max-width: 500px;
     max-height: 290px;
+}
+
+
+
+
+@media only screen and (min-width:390px) and (max-width: 431px) {
+    .aboutus-content-box-set {
+        margin: 1rem 0;
+        width: 100%;
+        height: 28rem;
+    }
+    .aboutus-content-box-set h2 {
+        margin: 0;
+        font-size: 30px;
+    }
+    .aboutus-content-box-set p {
+        margin-top: 1rem;
+    }
+
+    /* box 1  */
+    .aboutus-content-box-1 {
+        flex-direction: column-reverse;
+        text-align: start;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        background: linear-gradient(to top, rgb(233, 248, 255) 50%, var(--color-bg));
+    }
+    .aboutus-content-box-1 img {
+        max-width: 100%;
+        max-height: 290px;
+        margin: 1rem 0;
+    }
+    .content-text-box-1 p {
+        margin-bottom: 1rem;
+    }
+
+    /* box 2  */
+    .aboutus-content-box-2 {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin: 1rem, 0;
+        background: linear-gradient(to top, rgb(233, 248, 255) 30%, var(--color-bg));
+    }
+    .aboutus-content-box-2 img {
+        max-width: 100%;
+        max-height: 290px;
+        margin: 1rem 0;
+    }
+    .content-text-box-2 p {
+        margin-bottom: 1rem;
+    }
+}
+
+
+@media only screen and (min-width: 319px) and (max-width: 389px) {
+    .aboutus-content-box-set {
+        margin: 1rem 0;
+        width: 100%;
+        height: 28rem;
+    }
+    .aboutus-content-box-set h2 {
+        margin: 0;
+        font-size: 30px;
+    }
+    .aboutus-content-box-set p {
+        margin-top: 1rem;
+    }
+
+    /* box 1  */
+    .aboutus-content-box-1 {
+        flex-direction: column-reverse;
+        text-align: start;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        background: linear-gradient(to top, rgb(233, 248, 255) 50%, var(--color-bg));
+    }
+    .aboutus-content-box-1 img {
+        max-width: 100%;
+        max-height: 290px;
+        margin: 1rem 0;
+    }
+    .content-text-box-1 p {
+        margin-bottom: 1rem;
+    }
+
+    /* box 2  */
+    .aboutus-content-box-2 {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin: 1rem, 0;
+        background: linear-gradient(to top, rgb(233, 248, 255) 30%, var(--color-bg));
+    }
+    .aboutus-content-box-2 img {
+        max-width: 100%;
+        max-height: 290px;
+        margin: 1rem 0;
+    }
+    .content-text-box-2 p {
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .aboutus-content-box-set {
+        height: auto;
+    }
 }

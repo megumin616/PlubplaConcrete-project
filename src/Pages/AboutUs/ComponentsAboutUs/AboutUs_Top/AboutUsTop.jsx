@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../AboutUs_Top/aboutustop.css";
 
 // images
 import background from "../../../../assets/Images/Background/backgroundHome.png";
 import video from "../../../../assets/Images/Video/video-img1.png";
 
-const styles = {
-  backgroundImage: `url(${background})`,
-  backgroundSize: "cover",
-  height: "70vh",
-};
 
 export default function AboutUsTop() {
+  const [styleHeight, setStyleHeight] = useState(70)
+
+  useEffect(() => {
+    if (window.matchMedia("(min-width: 319px) and (max-width: 431px)").matches) {
+      setStyleHeight(50)
+    }
+    if (window.matchMedia("(max-width: 330px)").matches) {
+      setStyleHeight(60)
+    }
+  },[])
+
+  const styles = {
+    backgroundImage: `url(${background})`,
+    backgroundSize: "cover",
+    height: `${styleHeight}vh`,
+  };
   return (
     <>
       <div className="section-aboutus-top" style={styles}>

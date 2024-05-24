@@ -32,3 +32,58 @@
     color: white;
     font-size: 23px;
 }
+
+
+
+@media only screen and (min-width:390px) and (max-width: 431px) {
+    .aboutus-container {
+        flex-direction: column;
+        margin: 0;
+        /* padding: 0; */
+        text-align: center;
+    }
+    .aboutus-container img {
+        width: 375px;
+        height: 210px;
+    }
+    .aboutus-container h1 {
+        font-size: 30px;
+    }
+    .aboutus-text {
+        margin: 0 1rem;
+    }
+    .aboutus-text p {
+        font-size: 20px;
+    }
+}
+
+
+
+@media only screen and (min-width: 319px) and (max-width: 389px) {
+    .aboutus-container {
+        flex-direction: column;
+        margin: 0;
+        /* padding: 0; */
+        text-align: center;
+    }
+    .aboutus-container img {
+        width: 325px;
+        height: 180px;
+    }
+    .aboutus-container h1 {
+        font-size: 23px;
+    }
+    .aboutus-text {
+        margin: 0 1rem;
+    }
+    .aboutus-text p {
+        font-size: 16px;
+    }
+}
+
+
+@media only screen and (max-width: 330px) {
+    .aboutus-container {
+        height: auto;
+    }
+}
