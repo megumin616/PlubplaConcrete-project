@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../Performance_Top/performancetop.css";
 
 // image
 import img_performance from "../../../../assets/Images/Background/backgroundPerformance.png";
+import img_work from "../../../../assets/Images/Background/backgroundWork.png";
 
-const styles = {
-  backgroundImage: `url(${img_performance})`,
-  backgroundSize: "cover",
-  height: "50vh",
-};
 
 export default function PerformanceTop() {
+  const [heightStyle, setHeightStyle] = useState(50)
+
+  useEffect(() => {
+    if (window.matchMedia("(min-width: 319px) and (max-width: 376px)").matches) {
+      setHeightStyle(60)
+    }
+    if (window.matchMedia("(max-width: 330px").matches) {
+      setHeightStyle(70)
+    }
+  },[])
+
+  const styles = {
+    backgroundImage: `url(${img_performance})`,
+    backgroundSize: "cover",
+    height: `${heightStyle}vh`,
+  };
   return (
     <>
       <div className="section-performance-top" style={styles}>

@@ -26,3 +26,40 @@
     font-size: 20px;
     margin-bottom: 1.5rem;
 }
+
+
+
+@media only screen and (min-width:390px) and (max-width: 431px) {
+    .section-performance-top {
+        /* height: 60vh; */
+    }
+    .section-performance-top-text h1{
+        margin-top: 3rem;
+    }
+    .section-performance-top-text p {
+        font-size: 17px;
+    }
+}
+
+
+@media only screen and (min-width: 319px) and (max-width: 389px) {
+    .section-performance-top {
+        /* height: 60vh; */
+    }
+    .section-performance-top-text h1{
+        margin-top: 3rem;
+        font-size: 30px;
+    }
+    .section-performance-top-text p {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .section-performance-top-text h1 {
+        font-size: 30px;
+    }
+    .section-performance-top-text p {
+        font-size: 14px;
+    }
+}
