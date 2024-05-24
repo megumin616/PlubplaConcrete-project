@@ -1,21 +1,66 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../Performance/performancedetail.css'
 import Navbar from '../../Components/Navbar/Navbar'
+import Footer from '../../Components/Footer/Footer'
 
 // image 
 import img_detail1 from '../../assets/Images/Performance/performanceDetail1.png'
-import Footer from '../../Components/Footer/Footer'
+import img_detail2 from '../../assets/Images/Performance/performance2.png'
+
 
 export default function PerformanceDetail() {
+  const [currentPerformance, setCurrentPerformance] = useState(1);
+  const performancePerImg = 1;
+
+  const images = [
+    { id: 1, img: img_detail1 },
+    { id: 1, img: img_detail2 },
+    { id: 1, img: img_detail1 },
+  ];
+
+  const indexLast = currentPerformance * performancePerImg;
+  const indexFirst = indexLast - performancePerImg;
+
+  const currentImages = images.slice(indexFirst, indexLast);
+
+  const totalImg = Math.ceil(images.length / performancePerImg);
+
+  const handleLast = () => {
+    setCurrentPerformance((prevPage) => Math.max(prevPage - 1, 1));
+  };
+
+  const handleFirst = () => {
+    setCurrentPerformance((prevPage) => Math.min(prevPage + 1, totalImg));
+  };
   return (
     <>
      <Navbar/>
      <div className='section-performance-detail'>
             <div className='performance-detail-img'>
-                <img src={img_detail1}/>
-                <img src={img_detail1}/>
-                <img src={img_detail1}/>
+                <img className="img-display" src={img_detail1}/>
+                <img className="img-display" src={img_detail1}/>
+                <img className="img-display" src={img_detail1}/>
             </div>
+            {currentImages.map((images) => (
+          <img className="img-responsive" src={images.img} key={images.id} />
+        ))}
+
+        <div className="btn-group">
+          <button
+            className="btn-prev"
+            onClick={handleLast}
+            disabled={currentPerformance === 1}
+          >
+            Prev
+          </button>
+          <button
+            className="btn-next"
+            onClick={handleFirst}
+            disabled={currentPerformance === totalImg}
+          >
+            Next
+          </button>
+        </div>
             <div className='performance-detail-content'>
                 <h1>โครงการบ้านเพชร</h1>
                 <p>
