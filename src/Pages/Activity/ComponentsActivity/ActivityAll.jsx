@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../ComponentsActivity/activityall.css";
 
 // images
@@ -6,7 +6,15 @@ import img_activity1 from "../../../assets/Images/Activity/activity1.png";
 
 export default function ActivityAll() {
   const [currentPage, setCurrentPage] = useState(1);
-  const activityPerPage = 6;
+  // const activityPerPage = 6;
+  const [activityPerPage, setActivityPerPage] = useState(6)
+  
+  useEffect(() => {
+    if (window.matchMedia("(min-width: 319px) and (max-width: 431px)").matches) {
+      setActivityPerPage(4)
+    }
+  },[])
+
 
   const activities = [
     { id: 1, title: "มอบทุนการศึกษา", date: "00/00/0000", img: img_activity1 },
@@ -46,8 +54,9 @@ export default function ActivityAll() {
   return (
     <>
       <div className="section-activity-all">
-        <h1>กิจกรรมของเรา</h1>
+        <h1 className="section-text">กิจกรรมของเรา</h1>
         <div className="section-activity-all-container">
+        <h1 className="section-text-h1">กิจกรรมทั้งหมด</h1>
           <div className="container-activities">
             {currentActivities.map((activities) => (
               <div className="activity" key={activities.id}>

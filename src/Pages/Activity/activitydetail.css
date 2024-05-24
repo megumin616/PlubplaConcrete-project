@@ -32,3 +32,116 @@
     color: white;
     font-size: 18px;
 }
+
+.img-responsive {
+    display: none;
+}
+.btn-group {
+    display: none;
+}
+
+
+
+
+@media only screen and (min-width:390px) and (max-width: 431px) {
+    .img-display {
+        display: none;
+    }
+    .section-activity-detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+    /* .img-container-responsive {
+        width: 100%;
+    } */
+    .img-responsive {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-width: 340px;
+        min-height: 270px;
+        /* max-height: auto; */
+        /* width: 90%; */
+        margin: 0;
+        padding: 0;
+    }
+    .btn-group {
+        display: block;
+        margin: 1rem 0;
+    }
+    .btn-prev, .btn-next {
+        margin: 0 1rem;
+        width: 3rem;
+        height: 1.4rem;
+        background: transparent;
+        /* border: 1px solid var(--color-bg);
+        color: var(--color-bg); */
+    }
+
+    .activity-detail-content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        /* justify-content: center; */
+        position: relative;
+    }
+}
+
+
+@media only screen and (min-width: 319px) and (max-width: 389px) {
+    .img-display {
+        display: none;
+    }
+    .section-activity-detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+    /* .img-container-responsive {
+        width: 100%;
+    } */
+    .img-responsive {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-width: 340px;
+        min-height: 270px;
+        /* max-height: auto; */
+        /* width: 90%; */
+        margin: 0;
+        padding: 0;
+    }
+    .btn-group {
+        display: block;
+        margin: 1rem 0;
+    }
+    .btn-prev, .btn-next {
+        margin: 0 1rem;
+        width: 3rem;
+        height: 1.4rem;
+        background: transparent;
+        /* border: 1px solid var(--color-bg);
+        color: var(--color-bg); */
+    }
+
+    .activity-detail-content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        /* justify-content: center; */
+        position: relative;
+    }
+}
