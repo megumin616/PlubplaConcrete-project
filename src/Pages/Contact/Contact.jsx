@@ -61,6 +61,7 @@ export default function Contact() {
             Google map
           </a>
         </div>
+        <h1 className="contact-h1-map">ติดต่อเรา</h1>
       </div>
       <Footer />
     </>
