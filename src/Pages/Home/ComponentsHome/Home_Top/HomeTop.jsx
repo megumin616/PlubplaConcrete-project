@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../Home_Top/hometop.css";
 
@@ -6,7 +6,7 @@ import "../Home_Top/hometop.css";
 import Background from "../../../../assets/Images/Background/backgroundHome.png";
 
 //video
-// import video from "../../../../assets/Videos/PPC_Final_S.mp4"
+import video from "../../../../assets/Videos/PPC_Final_S.mp4"
 
 const styles = {
   backgroundImage: `url(${Background})`,
@@ -14,6 +14,15 @@ const styles = {
 };
 
 export default function HomeTop() {
+  const [width, setWidth] = useState(760);
+  const [height, setHeight] = useState("auto");
+
+  useEffect(() => {
+    if (window.matchMedia("(min-width:319px) and (max-width: 431px)").matches) {
+      setWidth(360)
+      setHeight("auto")
+    }
+  },[])
   return (
     <>
       <div className="section-home" style={styles}>
@@ -45,12 +54,12 @@ export default function HomeTop() {
 
           <div className="section-home-top-box2">
             <p>เกี่ยวกับบริษัทเรา</p>
-            <img
+            {/* <img
               src="https://images.unsplash.com/photo-1715604723666-866e18a5d257?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            />
-            {/* <video width={760} height={440} controls>
+            /> */}
+            <video style={{width: width, height: height}} controls>
               <source src={video} type="video/mp4"/>
-            </video> */}
+            </video>
           </div>
         </div>
       </div>

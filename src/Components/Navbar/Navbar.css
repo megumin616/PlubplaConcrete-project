@@ -8,6 +8,7 @@
     align-items: center;
     padding: 1rem 3rem;
     background: var(--color-bg);
+    z-index: 999;
 }
 .navbar-list-text a {
     margin: 0 0.5rem;
@@ -78,5 +79,15 @@
     .navbar-list-text {
         height: 70%;
         transform: translateY(-80vh);
+        z-index: 999;
+    }
+    .navbar {
+        z-index: 9999;
+    }
+}
+
+@media only screen and (max-width: 431px) {
+    .navbar-list-text {
+        z-index: 999;
     }
 }
