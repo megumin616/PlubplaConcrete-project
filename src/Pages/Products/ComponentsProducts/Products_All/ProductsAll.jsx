@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../Products_All/productsall.css";
+import { useNavigate } from "react-router-dom";
+import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
+import {db} from "../../../../firebase"
 
 // images
 import backgroundImg from "../../../../assets/Images/Background/backgroundHome.png";
@@ -17,15 +20,43 @@ const styles = {
 export default function ProductsAll() {
   const [currentPage, setCurrentPage] = useState(1); //ตั้งจำนวนหน้าปัจจุบัน
   const productsPerPage = 4; //จำนวนสินค้าที่ต้องการให้มีต่อหน้า
+  const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const products = [
-    { id: 1, head: "แผ่นพื้นตัน แผ่นพื้นคอนกรีตอัดแรงซีแพค", title: "ขนาดกว้าง 35 เซนติเมตร ,หนา 5 เซนติเตร , ความยาวสูงสุด 5 เมตร คุณภาพมาตรฐาน มอก.828-2546 ราคาเริ่มต้น 240 บาท/ตร.ม.มาตรฐาน มอก.828-2546", img: product_1 },
-    { id: 2, head: "เสาเข็มคอนกรีตอัดแรงซีแพค เสาเข็มใหญ่", title: "เสาเข็มคอนกรีตอัดแรง เป็นส่วนประกอบของโครงสร้าง ที่อยู่ใต้สุดของอาคาร ทำหน้าที่รับน้ำหนักอาคารทั้งหลัง จากฐานราก แล้วถ่ายลงสู่ดิน", img: product_2 },
-    { id: 3, head: "คอนกรีตผสมเสร็จ SCG", title: "มิตรแท้โครงการก่อสร้าง คอนกรีต ในเมืองจันทบุรีและตราด วิศวกรและผู้รับเหมาไว้วางใจ คอนกรีตคุณภาพ จากพลับพลาคอนกรีต", img: product_3 },
-    { id: 4, head: "อิฐบล็อก คอนกรีตบล็อก​", title: "ขนาดกว้าง 35 เซนติเมตร ,หนา 5 เซนติเตร , ความยาวสูงสุด 5 เมตร คุณภาพมาตรฐานเท่ากันทุกแผ่น", img: product_4 },
-    { id: 5, head: "แผ่นพื้นตัน แผ่นพื้นคอนกรีตอัดแรงซีแพค", title: "ขนาดกว้าง 35 เซนติเมตร ,หนา 5 เซนติเตร , ความยาวสูงสุด 5 เมตร คุณภาพมาตรฐาน มอก.828-2546 ราคาเริ่มต้น 240 บาท/ตร.ม.มาตรฐาน มอก.828-2546", img: product_1 },
-    { id: 6, head: "แผ่นพื้นตัน แผ่นพื้นคอนกรีตอัดแรงซีแพค", title: "ขนาดกว้าง 35 เซนติเมตร ,หนา 5 เซนติเตร , ความยาวสูงสุด 5 เมตร คุณภาพมาตรฐาน มอก.828-2546 ราคาเริ่มต้น 240 บาท/ตร.ม.มาตรฐาน มอก.828-2546", img: product_1 },
-  ];
+  //ดึงข้อมูลมาแสดง
+  useEffect(() => {
+    setLoading(true);
+    const unsub = onSnapshot(
+      collection(db, "products"), //อย่าลืมมาเปลี่ยนตรงนี้ หลังจากสร้างไฟล์ตารางใหม่
+      (snapshot) => {
+        let list = [];
+        snapshot.docs.forEach((doc) => {
+          list.push({ id: doc.id, ...doc.data() });
+        });
+        setProduct(list);
+        setLoading(false);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    return () => {
+      unsub();
+    };
+  }, []);
+
+  //หากกำลังโหลดข้อมูล ให้แสดงหน้านี้ก่อน หรือจะให้แสดง UI อะไรก็ได้
+  if (loading) {
+    return console.log("loading..");
+  }
+
+  const products = product.map((item) => ({
+    id: item.id,
+    head: item.product,
+    title: item.detail,
+    img: item.img1,
+  }));
 
   // คำนวณดัชนีสำหรับสินค้าแรกและสินค้าสุดท้ายของหน้าปัจจุบัน
   const indexOfLastProduct = currentPage * productsPerPage; // 1 x 4 = 4 ||
@@ -67,7 +98,7 @@ export default function ProductsAll() {
           <div className="products">
             {/* วนลูปตัวสินค้า โดยเอาตัว currentProducts 0 ถึง 4 มาวนลูป */}
             {currentProducts.map((product) => (
-              <div className="product" key={product.id}>
+              <div className="product" key={product.id} onClick={() => navigate(`/productdetail/${product.id}`)}>
                 <img src={product.img} />
                 <h2>{product.head}</h2> {/*เนื้อหาสินค้า */}
                 <p>{product.title}</p>
@@ -82,7 +113,8 @@ export default function ProductsAll() {
                 Prev
               </button>
               {[...Array(totalPages).keys()].map((page) => (
-                <button className="products-button-number"
+                <button
+                  className="products-button-number"
                   key={page + 1}
                   onClick={() => handlePageClick(page + 1)}
                 >

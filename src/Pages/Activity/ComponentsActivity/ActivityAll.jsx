@@ -3,11 +3,17 @@ import "../ComponentsActivity/activityall.css";
 
 // images
 import img_activity1 from "../../../assets/Images/Activity/activity1.png";
+import { useNavigate } from "react-router-dom";
+import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
+import { db } from "../../../firebase";
+import moment from "moment";
 
 export default function ActivityAll() {
   const [currentPage, setCurrentPage] = useState(1);
-  // const activityPerPage = 6;
   const [activityPerPage, setActivityPerPage] = useState(6)
+  const [activity, setActivity] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   
   useEffect(() => {
     if (window.matchMedia("(min-width: 319px) and (max-width: 431px)").matches) {
@@ -16,18 +22,40 @@ export default function ActivityAll() {
   },[])
 
 
-  const activities = [
-    { id: 1, title: "มอบทุนการศึกษา", date: "00/00/0000", img: img_activity1 },
-    { id: 2, title: "มอบทุนการศึกษา", date: "00/00/0000", img: img_activity1 },
-    { id: 3, title: "มอบทุนการศึกษา", date: "00/00/0000", img: img_activity1 },
-    { id: 4, title: "มอบทุนการศึกษา", date: "00/00/0000", img: img_activity1 },
-    { id: 5, title: "มอบทุนการศึกษา", date: "00/00/0000", img: img_activity1 },
-    { id: 6, title: "มอบทุนการศึกษา", date: "00/00/0000", img: img_activity1 },
-    { id: 7, title: "มอบทุนการศึกษา", date: "00/00/0000", img: img_activity1 },
-    { id: 8, title: "มอบทุนการศึกษา", date: "00/00/0000", img: img_activity1 },
-    { id: 9, title: "มอบทุนการศึกษา", date: "00/00/0000", img: img_activity1 },
-    { id: 10, title: "มอบทุนการศึกษา", date: "00/00/0000", img: img_activity1 },
-  ];
+  //ดึงข้อมูลมาแสดง
+  useEffect(() => {
+    setLoading(true);
+    const unsub = onSnapshot(
+      collection(db, "activities"), //อย่าลืมมาเปลี่ยนตรงนี้ หลังจากสร้างไฟล์ตารางใหม่
+      (snapshot) => {
+        let list = [];
+        snapshot.docs.forEach((doc) => {
+          list.push({ id: doc.id, ...doc.data() });
+        });
+        setActivity(list);
+        setLoading(false);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    return () => {
+      unsub();
+    };
+  }, []);
+
+  //หากกำลังโหลดข้อมูล ให้แสดงหน้านี้ก่อน หรือจะให้แสดง UI อะไรก็ได้
+  if (loading) {
+    return console.log("loading..");
+  }
+
+  const activities = activity.map((item) => ({
+    id: item.id,
+    title: item.activity,
+    date: moment(item.timestamp.toDate()).format("YYYY-MM-DD"), // ใช้ moment.js ในการแปลงวันที่,
+    img: item.img1,
+  }));
+
 
   const indexOfLastActivity = currentPage * activityPerPage;
   const indexOfFirstActivity = indexOfLastActivity - activityPerPage;
@@ -59,7 +87,7 @@ export default function ActivityAll() {
         <h1 className="section-text-h1">กิจกรรมทั้งหมด</h1>
           <div className="container-activities">
             {currentActivities.map((activities) => (
-              <div className="activity" key={activities.id}>
+              <div className="activity" key={activities.id} onClick={() => navigate(`/activitydetail/${activities.id}`)}>
                 <img src={activities.img} />
                 <h2>{activities.title}</h2>
                 <p>{activities.date}</p>

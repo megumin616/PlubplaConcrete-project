@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "../ComponentsPerformance/performanceall.css";
+import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
+import moment from "moment";
+import { db } from "../../../firebase";
 
 // images
 import img_activity1 from "../../../assets/Images/Performance/performance1.png";
+import { useNavigate } from "react-router-dom";
 
 export default function PerformanceAll() {
   const [currentPage, setCurrentPage] = useState(1);
-  // const performancePerPage = 6;
   const [performancePerPage, setPerformancePerPage] = useState(6);
+  const [performance, setPerformance] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (
@@ -17,23 +23,40 @@ export default function PerformanceAll() {
     }
   }, []);
 
-  const performanceData = [
-    { id: 1, title: "โครงการบ้านเพชร", date: "00/00/0000", img: img_activity1 },
-    { id: 2, title: "โครงการบ้านเพชร", date: "00/00/0000", img: img_activity1 },
-    { id: 3, title: "โครงการบ้านเพชร", date: "00/00/0000", img: img_activity1 },
-    { id: 4, title: "โครงการบ้านเพชร", date: "00/00/0000", img: img_activity1 },
-    { id: 5, title: "โครงการบ้านเพชร", date: "00/00/0000", img: img_activity1 },
-    { id: 6, title: "โครงการบ้านเพชร", date: "00/00/0000", img: img_activity1 },
-    { id: 7, title: "โครงการบ้านเพชร", date: "00/00/0000", img: img_activity1 },
-    { id: 8, title: "โครงการบ้านเพชร", date: "00/00/0000", img: img_activity1 },
-    { id: 9, title: "โครงการบ้านเพชร", date: "00/00/0000", img: img_activity1 },
-    {
-      id: 10,
-      title: "โครงการบ้านเพชร",
-      date: "00/00/0000",
-      img: img_activity1,
-    },
-  ];
+    //ดึงข้อมูลมาแสดง
+    useEffect(() => {
+      setLoading(true);
+      const unsub = onSnapshot(
+        collection(db, "performance"), //อย่าลืมมาเปลี่ยนตรงนี้ หลังจากสร้างไฟล์ตารางใหม่
+        (snapshot) => {
+          let list = [];
+          snapshot.docs.forEach((doc) => {
+            list.push({ id: doc.id, ...doc.data() });
+          });
+          setPerformance(list);
+          setLoading(false);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+      return () => {
+        unsub();
+      };
+    }, []);
+  
+    //หากกำลังโหลดข้อมูล ให้แสดงหน้านี้ก่อน หรือจะให้แสดง UI อะไรก็ได้
+    if (loading) {
+      return console.log("loading..");
+    }
+  
+    const performanceData = performance.map((item) => ({
+      id: item.id,
+      title: item.performance,
+      date: moment(item.timestamp.toDate()).format("YYYY-MM-DD"), // ใช้ moment.js ในการแปลงวันที่,
+      img: item.img1,
+    }));
+
 
   const indexOfLastPerformance = currentPage * performancePerPage;
   const indexOfFirstPerformance = indexOfLastPerformance - performancePerPage;
@@ -62,7 +85,7 @@ export default function PerformanceAll() {
         <div className="section-performance-all-container">
           <div className="container-activities">
             {currentPerformance.map((performanceData) => (
-              <div className="performance" key={performanceData.id}>
+              <div className="performance" key={performanceData.id} onClick={() => navigate(`/performancedetail/${performanceData.id}`)}>
                 <img src={performanceData.img} />
                 <h2>{performanceData.title}</h2>
                 <p>{performanceData.date}</p>
