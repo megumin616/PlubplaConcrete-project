@@ -3,6 +3,7 @@ vendor/
 .env
 .idea/
 .vscode/
+Videos/
 *.log
 *.tmp
 *.swp
