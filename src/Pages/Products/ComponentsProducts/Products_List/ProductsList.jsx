@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../Products_List/productslist.css";
 
 // images 
@@ -8,6 +9,25 @@ import product_3 from '../../../../assets/Images/Products/คอนกรีต�
 import product_4 from '../../../../assets/Images/Products/อิฐบล็อกคอนกรีตบล็อก​.png'
 
 export default function ProductsList() {
+  const navigate = useNavigate();
+
+  const id1 = "2KuI5e81lUJ9WjnVN2g4"
+  const id2 = "wabTmPdoFOMN5BctnrZ8"
+  const id3 = "DyH41b2AQgrwJeDwDRuO"
+  const id4 = "1IwQosojMer0AHc6lJBp"
+
+  const handle1 = () => {
+    navigate(`/productdetail/${id1}`);
+  }
+  const handle2 = () => {
+    navigate(`/productdetail/${id2}`);
+  }
+  const handle3 = () => {
+    navigate(`/productdetail/${id3}`);
+  }
+  const handle4 = () => {
+    navigate(`/productdetail/${id4}`);
+  }
   return (
     <>
       <div className="section-products-popular">
@@ -25,7 +45,7 @@ export default function ProductsList() {
                 <br />
                 ได้รับรองมาตรฐาน มอก.828-2546
               </p>
-              <button>รายละเอียด</button>
+              <button onClick={handle1}>รายละเอียด</button>
               <p className="text-p">ประเมินค่าจัดส่ง โทรด่วน 088-622-3030</p>
             </div>
           </div>
@@ -38,7 +58,7 @@ export default function ProductsList() {
               ที่อยู่ใต้สุดของอาคาร ทำหน้าที่รับน้ำหนักอาคารทั้งหลัง <br/> 
               จากฐานราก แล้วถ่ายลงสู่ดิน
               </p>
-              <button>รายละเอียด</button>
+              <button onClick={handle2}>รายละเอียด</button>
               <p className="text-p">ประเมินค่าจัดส่ง โทรด่วน 088-622-3030</p>
             </div>
             <img src={product_2}/>
@@ -53,7 +73,7 @@ export default function ProductsList() {
               วิศวกรและผู้รับเหมาไว้วางใจ คอนกรีตคุณภาพ <br/>
               จากพลับพลาคอนกรีต
               </p>
-              <button>รายละเอียด</button>
+              <button onClick={handle3}>รายละเอียด</button>
               <p className="text-p">ประเมินค่าจัดส่ง โทรด่วน 088-622-3030</p>
             </div>
           </div>
@@ -66,7 +86,7 @@ export default function ProductsList() {
               ตรวจตามมาตรฐานตลอดกระบวนการ ส่งถึงหน้างานลูกค้า <br/>
               ตรงตามเวลาที่ลูกค้าต้องการ
               </p>
-              <button>รายละเอียด</button>
+              <button onClick={handle4}>รายละเอียด</button>
               <p className="text-p">ประเมินค่าจัดส่ง โทรด่วน 088-622-3030</p>
             </div>
             <img src={product_4}/>
