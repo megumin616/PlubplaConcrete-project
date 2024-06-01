@@ -10,14 +10,15 @@ import video3 from "../../../../assets/Images/Video/video-img3.png";
 import video4 from "../../../../assets/Images/Video/video-img4.png";
 
 // videos
-import video_1 from "../../../../assets/Videos/video-1.mp4";
-import video_2 from "../../../../assets/Videos/video-2.mp4";
-import video_3 from "../../../../assets/Videos/video-3.mp4";
-import video_4 from "../../../../assets/Videos/video-4.mp4";
+import video_1 from "../../../../assets/Videos/video-AD-1.mp4";
+import video_2 from "../../../../assets/Videos/video-AD-2.mp4";
+import video_3 from "../../../../assets/Videos/video-AD-3.mp4";
+import video_4 from "../../../../assets/Videos/video-AD-4.mp4";
 
 export default function AboutUsContent() {
   const [width, setWidth] = useState(500);
   const [height, setHeight] = useState("auto");
+  const [marginTopVideo, setMarginTopVideo] = useState("");
   const [currentVideo, setCurrentVideo] = useState(null);
 
   const [styleHeight, setStyleHeight] = useState(70);
@@ -41,6 +42,7 @@ export default function AboutUsContent() {
       window.matchMedia("(min-width: 319px) and (max-width: 431px)").matches
     ) {
       setWidth(360);
+      setMarginTopVideo("6")
     }
   }, []);
 
@@ -67,7 +69,7 @@ export default function AboutUsContent() {
           {/* <img src={video} /> */}
           <video
             id="1"
-            style={{ width: widthTop, height: heightTop, zIndex: "0" }}
+            style={{ width: widthTop, height: heightTop, zIndex: "0", marginTop: `${marginTopVideo}rem`}}
             controls
             onClick={() => handleVideoPlay(1)}
           >

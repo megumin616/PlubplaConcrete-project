@@ -5,7 +5,7 @@ import "../AboutUs_Top/aboutustop.css";
 import background from "../../../../assets/Images/Background/backgroundHome.png";
 import imgvideo from "../../../../assets/Images/Video/video-img1.png"
 // video
-import video1 from "../../../../assets/Videos/video-1.mp4";
+import video1 from "../../../../assets/Videos/video-AD-1.mp4";
 
 
 export default function AboutUsTop() {
