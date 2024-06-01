@@ -9,10 +9,15 @@ import Contact from './Pages/Contact/Contact'
 import ProductDetail from './Pages/Products/ProductDetail'
 import ActivityDetail from './Pages/Activity/ActivityDetail'
 import PerformanceDetail from './Pages/Performance/PerformanceDetail'
+import { createContext, useState } from 'react'
+
+export const StyleContext = createContext();
 
 function App() {
+  const [styleNone, setStyleNone] = useState();
 
   return (
+    <StyleContext.Provider value={{styleNone, setStyleNone}}>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -29,6 +34,7 @@ function App() {
         <Route path='contact' element={<Contact/>}/>
       </Routes>
     </BrowserRouter>
+    </StyleContext.Provider>
   )
 }
 

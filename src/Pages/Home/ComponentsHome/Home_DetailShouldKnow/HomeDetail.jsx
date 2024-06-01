@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../Home_DetailShouldKnow/homedetail.css";
 
 // images
@@ -16,23 +16,43 @@ import icon_2 from "../../../../assets/Images/Icons/icon-detail2.png";
 import icon_3 from "../../../../assets/Images/Icons/icon-detail3.png";
 import icon_4 from "../../../../assets/Images/Icons/icon-detail4.png";
 
+import { StyleContext } from "../../../../App";
+
 export default function HomeDetail() {
   const [isDetailVisible, setIsDetailVisible] = useState(false);
   const [isDetailV_2, setIsDetail_2] = useState(false);
   const [isDetailV_3, setIsDetail_3] = useState(false);
   const [isDetailV_4, setIsDetail_4] = useState(false);
 
+  const {setStyleNone} = useContext(StyleContext);
+
   const toggleDetailVisibility = () => {
-      setIsDetailVisible(prevState => !prevState);
+    setIsDetailVisible(prevState => {
+      const nextStyle = prevState ? "flex" : "none";
+      setStyleNone(nextStyle);
+      return !prevState;
+    });
   };
   const toggleDetailV_2 = () => {
-      setIsDetail_2(prevState => !prevState);
+      setIsDetail_2(prevState => {
+        const nextStyle = prevState ? "flex" : "none";
+        setStyleNone(nextStyle);
+        return !prevState;
+      });
   };
   const toggleDetailV_3 = () => {
-      setIsDetail_3(prevState => !prevState);
+    setIsDetail_3(prevState => {
+      const nextStyle = prevState ? "flex" : "none";
+      setStyleNone(nextStyle);
+      return !prevState;
+    });
   };
   const toggleDetailV_4 = () => {
-      setIsDetail_4(prevState => !prevState);
+    setIsDetail_4(prevState => {
+      const nextStyle = prevState ? "flex" : "none";
+      setStyleNone(nextStyle);
+      return !prevState;
+    });
   };
 
   const handleClickInsideFixedDetail = (e) => {
