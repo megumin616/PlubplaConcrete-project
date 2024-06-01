@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../Navbar/Navbar.css'
 import { Link } from 'react-router-dom'
 
@@ -6,15 +6,36 @@ import menu from '../../assets/Images/Menu/menu.png'
 import menuX from '../../assets/Images/Menu/menuX.png'
 
 export default function Navbar() {
+  const [navbarStyle, setNavbarStyle] = useState({});
   const navRef = useRef();
 
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav")
   }
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  },[])
+
+  const handleScroll = () => {
+    if (window.scrollY >= 300) {
+      setNavbarStyle({
+        backgroundColor: "rgba(149, 223, 255, 0.612)",
+        transition: "1s",
+      })
+    } else {
+      setNavbarStyle({
+        backgroundColor: ""
+      })
+    }
+  }
 
   return (
-    <div className='navbar'>
+    <div className='navbar' style={navbarStyle}>
         <div className='navbar-logo'>
             <h1>Logo</h1>
         </div>

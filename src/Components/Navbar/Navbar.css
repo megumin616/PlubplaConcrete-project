@@ -9,6 +9,8 @@
     padding: 1rem 3rem;
     background: var(--color-bg);
     z-index: 999;
+    width: 100%;
+    position: fixed;
 }
 .navbar-list-text a {
     margin: 0 0.5rem;
