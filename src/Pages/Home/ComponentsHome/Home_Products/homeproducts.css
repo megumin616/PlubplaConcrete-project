@@ -67,3 +67,39 @@
         width: 300px;
     }
 }
+
+
+/* Tablet  */
+@media screen and (min-width: 1020px) and (max-width: 1376px) {
+    .section-home-products-items {
+        grid-column-gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 810px) and (max-width: 1020px) {
+    .section-home-products-items {
+        grid-column-gap: 0;
+    }
+    .products-item {
+        width: 25rem;
+        padding: 0 2rem;
+    }
+    .products-item img {
+        width: 300px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 760px) and (max-width: 810px) {
+    .section-home-products-items {
+        grid-column-gap: 0;
+    }
+    .products-item {
+        width: 25rem;
+        padding: 0 2rem;
+    }
+    .products-item img {
+        width: 300px;
+        height: auto;
+    }
+}

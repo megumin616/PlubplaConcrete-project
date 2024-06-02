@@ -26,6 +26,12 @@ export default function HomeTop() {
       setHeight("auto")
       setMarginTop("6")
       setMarginBottom("2")
+    } else if (window.matchMedia("(min-width: 1020px) and (max-width: 1376px)").matches){
+      setWidth(560)
+    } else if (window.matchMedia("(min-width: 810px) and (max-width: 1020px)").matches) {
+      setWidth(460)
+    } else if (window.matchMedia("(min-width: 760px) and (max-width: 810px)").matches) {
+      setWidth(360)
     } else {
       setHeight("");
     }
