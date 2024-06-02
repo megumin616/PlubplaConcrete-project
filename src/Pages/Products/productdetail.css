@@ -12,9 +12,12 @@
 }
 .productdetail-img {
     margin: 3rem;
+    margin-top: 0;
+    display: flex;
 }
 .productdetail-img img {
     margin: 0 1rem;
+    margin-top: 12vh;
 }
 .productdetail-content {
     display: flex;

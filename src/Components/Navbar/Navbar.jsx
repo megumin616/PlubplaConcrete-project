@@ -14,6 +14,8 @@ export default function Navbar() {
   const navRef = useRef();
 
   const {styleNone} = useContext(StyleContext);
+  // const {styleNavFixed} = useContext(StyleContext);
+  // console.log("NavFixed",styleNavFixed)
 
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav")

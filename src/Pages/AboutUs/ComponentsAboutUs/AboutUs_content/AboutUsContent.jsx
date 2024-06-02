@@ -29,11 +29,11 @@ export default function AboutUsContent() {
     if (
       window.matchMedia("(min-width: 319px) and (max-width: 431px)").matches
     ) {
-      setStyleHeight(50);
+      setStyleHeight(60);
       setWidthTop(360);
     }
     if (window.matchMedia("(max-width: 330px)").matches) {
-      setStyleHeight(60);
+      setStyleHeight(80);
     }
   }, []);
 

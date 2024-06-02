@@ -127,6 +127,9 @@
     .content-text-box-1 p {
         margin-bottom: 1rem;
     }
+    .aboutus-text {
+        /* height: auto; */
+    }
 
     /* box 2  */
     .aboutus-content-box-2 {

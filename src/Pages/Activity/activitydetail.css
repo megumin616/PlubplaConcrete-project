@@ -7,8 +7,10 @@
 
 .section-activity-detail {
     text-align: center;
-    margin: 3rem;
+    margin: 1rem;
+    margin-top: 0;
     height: 100vh;
+    padding-top: 10vh;
 }
 .activity-detail-img {
     width: 90vw;
@@ -143,5 +145,12 @@
         padding: 0;
         /* justify-content: center; */
         position: relative;
+    }
+}
+
+
+@media only screen and (max-height: 670px) {
+    .section-activity-detail {
+        padding-top: 15vh;
     }
 }

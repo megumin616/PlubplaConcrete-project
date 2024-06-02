@@ -3,8 +3,10 @@ import '../Home_Performance/homeperformance.css'
 
 // image 
 import imgPer from '../../../../assets/Images/Performance/performance.jpeg'
+import { useNavigate } from "react-router-dom";
 
 export default function HomePerformance() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="section-home-performance">
@@ -23,7 +25,7 @@ export default function HomePerformance() {
               <br />
               ด้วยความใส่ใจในคุณภาพและบริการ
             </p>
-            <button>ผลงานอื่นๆ</button>
+            <button onClick={() => navigate("/performance")}>ผลงานอื่นๆ</button>
           </div>
         </div>
       </div>

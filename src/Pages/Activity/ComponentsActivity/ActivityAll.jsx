@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../ComponentsActivity/activityall.css";
 
 // images
@@ -8,12 +8,15 @@ import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
 import { db } from "../../../firebase";
 import moment from "moment";
 
+import { StyleContext } from "../../../App";
+
 export default function ActivityAll() {
   const [currentPage, setCurrentPage] = useState(1);
   const [activityPerPage, setActivityPerPage] = useState(6)
   const [activity, setActivity] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  // const {setStyleNavFixed} = useContext(StyleContext);
   
   useEffect(() => {
     if (window.matchMedia("(min-width: 319px) and (max-width: 431px)").matches) {
@@ -79,6 +82,10 @@ export default function ActivityAll() {
     setCurrentPage(page);
   };
 
+  // const handleNavFixed = () => {
+  //   setStyleNavFixed('"none"')
+  // }
+
   return (
     <>
       <div className="section-activity-all">
@@ -87,7 +94,10 @@ export default function ActivityAll() {
         <h1 className="section-text-h1">กิจกรรมทั้งหมด</h1>
           <div className="container-activities">
             {currentActivities.map((activities) => (
-              <div className="activity" key={activities.id} onClick={() => navigate(`/activitydetail/${activities.id}`)}>
+              <div className="activity" key={activities.id} onClick={() => {
+                navigate(`/activitydetail/${activities.id}`);
+                // handleNavFixed();
+              }}>
                 <img src={activities.img} />
                 <h2>{activities.title}</h2>
                 <p>{activities.date}</p>

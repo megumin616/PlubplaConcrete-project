@@ -7,14 +7,21 @@ import img_work from "../../../../assets/Images/Background/backgroundWork.png";
 
 
 export default function PerformanceTop() {
-  const [heightStyle, setHeightStyle] = useState(50)
+  const [heightStyle, setHeightStyle] = useState(58)
+  const [paddingTop, setPaddingTop] = useState(0);
 
   useEffect(() => {
     if (window.matchMedia("(min-width: 319px) and (max-width: 376px)").matches) {
-      setHeightStyle(60)
+      setHeightStyle(65)
     }
     if (window.matchMedia("(max-width: 330px").matches) {
-      setHeightStyle(70)
+      setHeightStyle(75)
+    }
+    if (window.matchMedia("(min-width:390px) and (max-width: 431px)").matches) {
+      setPaddingTop(5);
+    }
+    if (window.matchMedia("(min-width: 319px) and (max-width: 389px)").matches) {
+      setPaddingTop(6.5);
     }
   },[])
 
@@ -22,6 +29,7 @@ export default function PerformanceTop() {
     backgroundImage: `url(${img_performance})`,
     backgroundSize: "cover",
     height: `${heightStyle}vh`,
+    paddingTop: `${paddingTop}vh`
   };
   return (
     <>
