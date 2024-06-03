@@ -228,3 +228,126 @@
         height: 135vh;
     }
 }
+
+
+
+/* Tablet  */
+@media screen and (max-width: 1025px) {
+    .section-activity-all-container .container-activities {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        column-gap: 10px;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 60vh;
+    }
+    .section-activity-all {
+        /* padding-top: 15vh; */
+    }
+}
+
+@media screen and (min-width: 810px) and (max-width: 1020px) {
+    .section-activity-all-container .container-activities {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-column-gap: 1px;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 60vh;
+    }
+    .section-activity-all {
+
+    }
+    .container-activities .activity img {
+        width: 180px;
+        height: 180px;
+    }
+    .section-activity-all {
+        /* padding-top: 20vh; */
+    }
+}
+
+@media screen and (min-width: 760px) and (max-width: 810px) {
+    .section-activity-all-container .container-activities {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        column-gap: 10px;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: auto;
+    }
+    .section-activity-all {
+        height: 110vh;
+    }
+    .activity img {
+        width: 220px;
+        height: 220px;
+    }
+    .section-activity-all {
+        /* padding-top: 25vh; */
+    }
+    .section-activity-all-container {
+        height: 100vh;
+    }
+}
+
+
+/* CSS สำหรับ iPad 1180px ในแนวนอน */
+@media only screen 
+  and (max-width: 1180px) 
+  and (orientation: landscape) {
+    .section-activity-all-container .container-activities {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        column-gap: 10px;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: auto;
+    }
+    .container-activities .activity {
+        width: 80%;
+        height: auto;
+    }
+    .container-activities .activity img{
+        width: 200px;
+        height: 200px;
+    }
+  }
+
+
+/* CSS สำหรับ iPad 1024px ในแนวนอน */
+@media only screen 
+  and (max-width: 1024px) 
+  and (orientation: landscape) {
+    .section-activity-all-container .container-activities {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        column-gap: 10px;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: auto;
+    }
+    .container-activities .activity {
+        width: 80%;
+        height: auto;
+    }
+    .container-activities .activity img{
+        width: 200px;
+        height: 200px;
+    }
+  }

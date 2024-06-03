@@ -21,6 +21,8 @@ export default function ActivityAll() {
   useEffect(() => {
     if (window.matchMedia("(min-width: 319px) and (max-width: 431px)").matches) {
       setActivityPerPage(4)
+    } else if (window.matchMedia("(min-width: 810px) and (max-width: 1020px)").matches) {
+      setActivityPerPage(4)
     }
   },[])
 

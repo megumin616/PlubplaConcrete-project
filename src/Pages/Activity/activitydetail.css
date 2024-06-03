@@ -154,3 +154,37 @@
         padding-top: 15vh;
     }
 }
+
+
+
+
+/* Tablet  */
+@media screen and (min-width: 1020px) and (max-width: 1376px) {
+    .activity-detail-img img {
+        max-width: 300px;
+        height: auto;
+    }
+    .section-activity-detail {
+        height: 80vh;
+    }
+}
+
+@media screen and (min-width: 810px) and (max-width: 1020px) {
+    .activity-detail-img img {
+        max-width: 230px;
+        height: auto;
+    }
+    .section-activity-detail {
+        height: 80vh;
+    }
+}
+
+@media screen and (min-width: 760px) and (max-width: 810px) {
+    .activity-detail-img img {
+        max-width: 200px;
+        height: auto;
+    }
+    .section-activity-detail {
+        height: 100vh;
+    }
+}
