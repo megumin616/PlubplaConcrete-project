@@ -93,3 +93,27 @@
         z-index: 999;
     }
 }
+
+
+
+
+/* Tablet  */
+@media screen and (min-width: 1020px) and (max-width: 1376px) {
+    .navbar-list-text a {
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width: 810px) and (max-width: 1020px) {
+    .navbar-list-text a {
+        font-size: 14px;
+        margin: 0 0.3rem;
+    }
+}
+
+@media screen and (min-width: 760px) and (max-width: 810px) {
+    .navbar-list-text a {
+        font-size: 14px;
+        margin: 0 0.3rem;
+    }
+}

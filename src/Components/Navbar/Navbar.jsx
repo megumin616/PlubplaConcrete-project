@@ -14,8 +14,6 @@ export default function Navbar() {
   const navRef = useRef();
 
   const {styleNone} = useContext(StyleContext);
-  // const {styleNavFixed} = useContext(StyleContext);
-  // console.log("NavFixed",styleNavFixed)
 
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav")
@@ -38,18 +36,6 @@ export default function Navbar() {
       setTransition("");
     }
   }
-  // const handleScroll = () => {
-  //   if (window.scrollY >= 300) {
-  //     setNavbarStyle({
-  //       backgroundColor: "rgba(149, 223, 255, 0.612)",
-  //       transition: "1s",
-  //     })
-  //   } else {
-  //     setNavbarStyle({
-  //       backgroundColor: ""
-  //     })
-  //   }
-  // }
 
   return (
     <div className='navbar' style={{backgroundColor: backgroundColor, transition: transition, display: styleNone}}>
