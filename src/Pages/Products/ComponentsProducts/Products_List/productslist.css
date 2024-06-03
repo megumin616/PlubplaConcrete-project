@@ -189,3 +189,58 @@
         margin-bottom: 1.5rem;
     }
 }
+
+
+
+
+/* Tablet  */
+@media screen and (min-width: 1020px) and (max-width: 1376px) {
+    .product-popular img {
+        max-width: 300px;
+        max-height: 300px;
+    }
+    .product-popular-2 img {
+        max-width: 300px;
+        max-height: 300px;
+    }
+    .product-popular-text h2 {
+        font-size: 30px;
+    }
+    .product-popular-text p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 810px) and (max-width: 1020px) {
+    .product-popular img {
+        max-width: 300px;
+        max-height: 300px;
+    }
+    .product-popular-2 img {
+        max-width: 300px;
+        max-height: 300px;
+    }
+    .product-popular-text h2 {
+        font-size: 22px;
+    }
+    .product-popular-text p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 760px) and (max-width: 810px) {
+    .product-popular img {
+        max-width: 300px;
+        max-height: 300px;
+    }
+    .product-popular-2 img {
+        max-width: 325px;
+        max-height: 250px;
+    }
+    .product-popular-text h2 {
+        font-size: 22px;
+    }
+    .product-popular-text p {
+        font-size: 14px;
+    }
+}
