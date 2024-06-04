@@ -35,6 +35,21 @@ export default function AboutUsContent() {
     if (window.matchMedia("(max-width: 330px)").matches) {
       setStyleHeight(80);
     }
+    if (window.matchMedia("(min-width: 1020px) and (max-width: 1376px)").matches) {
+      setStyleHeight(40);
+      setWidthTop(540)
+      setWidth(400)
+    }
+    if (window.matchMedia("(min-width: 810px) and (max-width: 1020px)").matches) {
+      setStyleHeight(40);
+      setWidthTop(400)
+      setWidth(300)
+    }
+    if (window.matchMedia("(min-width: 760px) and (max-width: 810px)").matches) {
+      setStyleHeight(40);
+      setWidthTop(380)
+      setWidth(300)
+    }
   }, []);
 
   useEffect(() => {
@@ -42,6 +57,9 @@ export default function AboutUsContent() {
       window.matchMedia("(min-width: 319px) and (max-width: 431px)").matches
     ) {
       setWidth(360);
+      setMarginTopVideo("6")
+    }
+    if (window.matchMedia("(min-width: 1020px) and (max-width: 1376px)").matches) {
       setMarginTopVideo("6")
     }
   }, []);
@@ -59,7 +77,7 @@ export default function AboutUsContent() {
   const styles = {
     backgroundImage: `url(${background})`,
     backgroundSize: "cover",
-    height: `${styleHeight}vh`,
+    height: "auto",
     zIndex: "",
   };
   return (

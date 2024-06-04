@@ -205,3 +205,140 @@
         height: auto;
     }
 }
+
+
+
+/* Tablet  */
+@media screen and (min-width: 1020px) and (max-width: 1376px) {
+    .aboutus-container {
+        height: 45vh;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .aboutus-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .aboutus-content-box-set h2 {
+        font-size: 27px;
+    }
+    .aboutus-content-box-set p {
+        font-size: 18px;
+    }
+    .content-text-box-1 h2 {
+        font-size: 27px;
+    }
+    .content-text-box-1 p {
+        font-size: 17px;
+    }
+    .content-text-box-2 h2 {
+        font-size: 27px;
+    }
+    .content-text-box-2 p {
+        font-size: 17px;
+    }
+    .aboutus-content-box-1 {
+        height: 20rem;
+    }
+    .aboutus-content-box-2 {
+        height: 20rem;
+    }
+}
+
+@media screen and (min-width: 810px) and (max-width: 1020px) {
+    .aboutus-text h1 {
+        font-size: 25px;
+    }
+    .aboutus-text p {
+        font-size: 18px;
+    }
+    .aboutus-container {
+        height: 45vh;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .aboutus-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .aboutus-content-box-set h2 {
+        font-size: 27px;
+    }
+    .aboutus-content-box-set p {
+        font-size: 18px;
+    }
+    .content-text-box-1 h2 {
+        font-size: 27px;
+        margin-bottom: 0.2rem;
+    }
+    .content-text-box-1 p {
+        font-size: 15px;
+    }
+    .content-text-box-2 h2 {
+        font-size: 27px;
+    }
+    .content-text-box-2 p {
+        font-size: 17px;
+    }
+    .aboutus-content-box-1 {
+        height: 18rem;
+    }
+    .aboutus-content-box-2 {
+        height: 18rem;
+    }
+}
+
+@media screen and (min-width: 760px) and (max-width: 810px) {
+    .aboutus-text h1 {
+        font-size: 25px;
+    }
+    .aboutus-text p {
+        font-size: 18px;
+    }
+    .aboutus-container {
+        height: 45vh;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .aboutus-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .aboutus-content-box-set h2 {
+        font-size: 27px;
+    }
+    .aboutus-content-box-set p {
+        font-size: 18px;
+    }
+    .content-text-box-1 h2 {
+        font-size: 27px;
+        margin-bottom: 0.2rem;
+    }
+    .content-text-box-1 p {
+        font-size: 15px;
+    }
+    .content-text-box-2 h2 {
+        font-size: 27px;
+    }
+    .content-text-box-2 p {
+        font-size: 17px;
+    }
+    .aboutus-content-box-1 {
+        height: 18rem;
+    }
+    .aboutus-content-box-2 {
+        height: 18rem;
+    }
+}
