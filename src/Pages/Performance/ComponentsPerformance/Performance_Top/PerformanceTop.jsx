@@ -23,6 +23,18 @@ export default function PerformanceTop() {
     if (window.matchMedia("(min-width: 319px) and (max-width: 389px)").matches) {
       setPaddingTop(6.5);
     }
+    if (window.matchMedia("(min-width: 1020px) and (max-width: 1376px)").matches) {
+      setPaddingTop(0)
+      setHeightStyle(35)
+    }
+    if (window.matchMedia("(min-width: 810px) and (max-width: 1020px)").matches) {
+      setPaddingTop(0)
+      setHeightStyle(40)
+    }
+    if (window.matchMedia("(min-width: 760px) and (max-width: 810px)").matches) {
+      setPaddingTop(0)
+      setHeightStyle(45)
+    }
   },[])
 
   const styles = {

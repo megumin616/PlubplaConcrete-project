@@ -142,7 +142,68 @@
         width: 100%;
         margin: 0;
         padding: 0;
-        /* justify-content: center; */
         position: relative;
+    }
+}
+
+
+
+/* Tablet  */
+@media screen and (min-width: 1020px) and (max-width: 1376px) {
+    .section-performance-detail {
+        text-align: center;
+        /* display: f; */
+        /* margin: 3rem; */
+        margin-top: 0;
+        /* width: 100vw; */
+        height: 80vh;
+    }
+    .performance-detail-img {
+        /* width: 100vw; */
+        /* margin: 0 2rem; */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    .performance-detail-img img {
+        max-width: 300px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 810px) and (max-width: 1020px) {
+    .section-performance-detail {
+        text-align: center;
+        margin-top: 0;
+        height: 70vh;
+    }
+    .performance-detail-img {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    .performance-detail-img img {
+        max-width: 220px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 760px) and (max-width: 810px) {
+    .section-performance-detail {
+        text-align: center;
+        margin-top: 0;
+        height: 70vh;
+    }
+    .performance-detail-img {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    .performance-detail-img img {
+        max-width: 220px;
+        height: auto;
     }
 }
