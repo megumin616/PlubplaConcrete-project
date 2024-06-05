@@ -18,6 +18,12 @@
     width: 90vw;
     height: 15rem;
 }
+.aboutus-text {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
 .aboutus-content-box-set h2 {
     margin-top: 1rem;
     margin-bottom: 2rem;

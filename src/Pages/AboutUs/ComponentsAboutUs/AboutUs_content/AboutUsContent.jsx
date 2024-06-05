@@ -18,7 +18,7 @@ import video_4 from "../../../../assets/Videos/video-AD-4.mp4";
 export default function AboutUsContent() {
   const [width, setWidth] = useState(500);
   const [height, setHeight] = useState("auto");
-  const [marginTopVideo, setMarginTopVideo] = useState("");
+  const [marginTopVideo, setMarginTopVideo] = useState("4");
   const [currentVideo, setCurrentVideo] = useState(null);
 
   const [styleHeight, setStyleHeight] = useState(70);

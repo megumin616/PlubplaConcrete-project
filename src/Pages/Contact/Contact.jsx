@@ -17,6 +17,7 @@ export default function Contact() {
     <>
       <Navbar />
       <div className="section-contact">
+      {/* <Footer /> */}
         <div className="contact-text">
           <h1>ติดต่อเรา</h1>
           <div>
@@ -63,7 +64,7 @@ export default function Contact() {
         </div>
         <h1 className="contact-h1-map">ติดต่อเรา</h1>
       </div>
-      <Footer />
+      <Footer/>
     </>
   );
 }
