@@ -217,7 +217,7 @@
 /* Tablet  */
 @media screen and (min-width: 1020px) and (max-width: 1376px) {
     .aboutus-container {
-        height: 45vh;
+        height: 60vh;
         display: flex;
         align-items: center;
         justify-items: center;

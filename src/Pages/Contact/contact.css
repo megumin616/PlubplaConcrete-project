@@ -9,9 +9,13 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     color: var(--color-bg);
-}.contact-text div {
+}
+.contact-text {
+    justify-content: center;
+}
+.contact-text div {
     display: flex;
     align-items: center;
     margin: 1rem 0;
@@ -197,7 +201,7 @@
     .section-contact {
         flex-direction: column-reverse;
         justify-content: center;
-        height: 75vh;
+        height: auto;
     }
     .contact-text {
         height: auto;
