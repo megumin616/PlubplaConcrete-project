@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import menu from '../../assets/Images/Menu/menu.png'
 import menuX from '../../assets/Images/Menu/menuX.png'
+import logo from '../../assets/Images/Logo/พลับพลาคอนกรีตLogo.png'
 
 import { StyleContext } from '../../App'
 
@@ -11,6 +12,7 @@ export default function Navbar() {
   // const [navbarStyle, setNavbarStyle] = useState({});
   const [backgroundColor, setBackgroundColor] = useState("");
   const [transition, setTransition] = useState("");
+  const [width, setWidth] = useState(300);
   const navRef = useRef();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -26,6 +28,13 @@ export default function Navbar() {
   };
 
   useEffect(() => {
+    if (window.matchMedia("(min-width: 760px) and (max-width: 1376px)").matches) {
+      setWidth(200);
+    }
+    if (window.matchMedia("(min-width:319px) and (max-width: 431px)").matches) {
+      setWidth(240);
+    }
+    
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -46,7 +55,8 @@ export default function Navbar() {
   return (
     <div className='navbar' style={{backgroundColor: backgroundColor, transition: transition, display: styleNone}}>
         <div className='navbar-logo'>
-            <h1>Logo</h1>
+            {/* <h1>Logo</h1> */}
+            <img src={logo} style={{width: `${width}px`, height: 'auto', borderRadius: "25px"}}/>
         </div>
 
         <div className='navbar-list-text' ref={navRef}>
