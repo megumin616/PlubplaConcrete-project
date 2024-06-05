@@ -4,6 +4,7 @@ vendor/
 .idea/
 .vscode/
 Videos/
+dist/
 *.log
 *.tmp
 *.swp
