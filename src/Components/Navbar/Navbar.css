@@ -11,7 +11,7 @@
     background: var(--color-bg);
     z-index: 999;
     width: 100%;
-    height: 9vh;
+    height: 10vh;
     position: fixed;
 }
 .navbar-list-text {

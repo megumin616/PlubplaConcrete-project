@@ -36,7 +36,7 @@ export default function HomeProducts() {
 
         <div className="section-home-products-items">
           
-          <div className="products-item">
+          <div className="products-item" >
             <img src={img1} alt="แผ่นพื้นคอนกรีต"/>
             <h2>แผ่นพื้นตันแผ่นพื้นคอนกรีตอัดแรงซีแพค</h2>
             <p>
@@ -47,7 +47,7 @@ export default function HomeProducts() {
             <button onClick={handle1}>รายละเอียด</button>
           </div>
 
-          <div className="products-item">
+          <div className="products-item" >
             <img src={img2} alt="เสาเข็มคอนกรีต"/>
             <h2>เสาเข็มคอนกรีตอัดแรง ซีแพค (เสาเข็มใหญ่)</h2>
             <p>
@@ -58,7 +58,7 @@ export default function HomeProducts() {
             <button onClick={handle2}>รายละเอียด</button>
           </div>
 
-          <div className="products-item">
+          <div className="products-item" >
             <img src={img3} alt="คอนกรีตผสมเสร็จ"/>
             <h2>คอนกรีตผสมเสร็จ SCG</h2>
             <p>
@@ -68,7 +68,7 @@ export default function HomeProducts() {
             <button onClick={handle3}>รายละเอียด</button>
           </div>
 
-          <div className="products-item">
+          <div className="products-item" >
             <img src={img4} alt="คอนกรีตบล็อก​"/>
             <h2>อิฐบล็อก คอนกรีตบล็อก​</h2>
             <p>

@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
     "@vis.gl/react-google-maps": "^1.0.0",
+    "aos": "^2.3.4",
     "firebase": "^10.12.2",
     "google-map-react": "^2.2.1",
     "moment": "^2.30.1",
