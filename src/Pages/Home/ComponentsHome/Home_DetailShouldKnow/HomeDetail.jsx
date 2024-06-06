@@ -79,11 +79,11 @@ export default function HomeDetail() {
             </div>
 
             <div className="detail-img">
-              <img src={detail_1} />
+              <img src={detail_1} alt="แผ่นพื้นซีแพค CPAC ดีกว่าแผ่นพื้นทั่วไปอย่างไร"/>
             </div>
 
             <div className={`detail-img-fixed ${isDetailVisible ? 'visible' : ''}`}>
-              <img src={detail_1} onClick={handleClickInsideFixedDetail}/>
+              <img src={detail_1} alt="แผ่นพื้นซีแพค CPAC ดีกว่าแผ่นพื้นทั่วไปอย่างไร" onClick={handleClickInsideFixedDetail}/>
             </div>
           </div>
 
@@ -102,11 +102,11 @@ export default function HomeDetail() {
             </div>
 
             <div className="detail-img">
-              <img src={detail_2} />
+              <img src={detail_2} alt="ค่าโหลดน้ำหนักบรรทุก"/>
             </div>
 
             <div className={`detail-img-fixed ${isDetailV_2 ? 'visible' : ''}`}>
-              <img src={detail_full2} onClick={handleClickInsideFixedDetail}/>
+              <img src={detail_full2} alt="ค่าโหลดน้ำหนักบรรทุก" onClick={handleClickInsideFixedDetail}/>
             </div>
           </div>
 
@@ -125,11 +125,11 @@ export default function HomeDetail() {
             </div>
 
             <div className="detail-img">
-              <img src={detail_3} />
+              <img src={detail_3} alt="การใช้งานแผ่นพื้นตันให้ถูกต้อง"/>
             </div>
 
             <div className={`detail-img-fixed ${isDetailV_3 ? 'visible' : ''}`}>
-              <img src={detail_full3} onClick={handleClickInsideFixedDetail}/>
+              <img src={detail_full3} alt="การใช้งานแผ่นพื้นตันให้ถูกต้อง" onClick={handleClickInsideFixedDetail}/>
             </div>
           </div>
 
@@ -149,11 +149,11 @@ export default function HomeDetail() {
             </div>
 
             <div className="detail-img">
-              <img src={detail_4} />
+              <img src={detail_4} alt="ติดตั้งแผ่นพื้นตัดให้ปลอดภัย"/>
             </div>
 
             <div className={`detail-img-fixed ${isDetailV_4 ? 'visible' : ''}`}>
-              <img src={detail_full4} onClick={handleClickInsideFixedDetail}/>
+              <img src={detail_full4} alt="ติดตั้งแผ่นพื้นตัดให้ปลอดภัย" onClick={handleClickInsideFixedDetail}/>
             </div>
           </div>
         </div>

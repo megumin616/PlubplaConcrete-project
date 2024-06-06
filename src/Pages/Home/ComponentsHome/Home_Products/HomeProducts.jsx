@@ -37,7 +37,7 @@ export default function HomeProducts() {
         <div className="section-home-products-items">
           
           <div className="products-item">
-            <img src={img1} />
+            <img src={img1} alt="แผ่นพื้นคอนกรีต"/>
             <h2>แผ่นพื้นตันแผ่นพื้นคอนกรีตอัดแรงซีแพค</h2>
             <p>
               แผ่นพื้นคอนกรีตอัดแรง ตราซีแพค(CPAC) <br />
@@ -48,7 +48,7 @@ export default function HomeProducts() {
           </div>
 
           <div className="products-item">
-            <img src={img2} />
+            <img src={img2} alt="เสาเข็มคอนกรีต"/>
             <h2>เสาเข็มคอนกรีตอัดแรง ซีแพค (เสาเข็มใหญ่)</h2>
             <p>
               เสาเข็มอัดแรง ตราซีแพค(CPAC) <br />
@@ -59,7 +59,7 @@ export default function HomeProducts() {
           </div>
 
           <div className="products-item">
-            <img src={img3} />
+            <img src={img3} alt="คอนกรีตผสมเสร็จ"/>
             <h2>คอนกรีตผสมเสร็จ SCG</h2>
             <p>
               คอนกรีตผสมเสร็จ เอสซีจี ได้รับรองเครื่องหมาย ใช้ปูนเอสซีจี <br />
@@ -69,7 +69,7 @@ export default function HomeProducts() {
           </div>
 
           <div className="products-item">
-            <img src={img4} />
+            <img src={img4} alt="คอนกรีตบล็อก​"/>
             <h2>อิฐบล็อก คอนกรีตบล็อก​</h2>
             <p>
               อิฐบล็อกคุณภาพผลิตจากเครื่องจักรอัตโนมัต ได้รับรองเครื่องหมาย
