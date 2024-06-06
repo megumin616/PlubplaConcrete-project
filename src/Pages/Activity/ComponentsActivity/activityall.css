@@ -48,6 +48,10 @@
     padding: 2rem;
     box-shadow: 5px 5px 15px 2px gray;
 }
+.activity img {
+    width: 350px;
+    height: 300px;
+}
 .activity h2 {
     text-align: start;
 }

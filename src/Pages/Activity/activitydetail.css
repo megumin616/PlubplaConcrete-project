@@ -15,8 +15,13 @@
 .activity-detail-img {
     width: 90vw;
     margin: 0 2rem;
+    margin-top: 3vh;
     display: flex;
     justify-content: space-between;
+}
+.activity-detail-img img {
+    width: 350px;
+    height: 350px;
 }
 .activity-detail-content {
     margin: 1.5rem 2rem;
@@ -48,6 +53,9 @@
 @media only screen and (min-width:390px) and (max-width: 431px) {
     .img-display {
         display: none;
+    }
+    .activity-detail-img {
+        margin-top: 0;
     }
     .section-activity-detail {
         display: flex;
@@ -101,6 +109,9 @@
     .img-display {
         display: none;
     }
+    .activity-detail-img {
+        margin-top: 0;
+    }
     .section-activity-detail {
         display: flex;
         flex-direction: column;
@@ -152,6 +163,9 @@
 @media only screen and (max-height: 670px) {
     .section-activity-detail {
         padding-top: 15vh;
+    }
+    .activity-detail-img {
+        margin-top: 0;
     }
 }
 

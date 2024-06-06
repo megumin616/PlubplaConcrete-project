@@ -23,6 +23,10 @@ export default function ActivityAll() {
       setActivityPerPage(4)
     } else if (window.matchMedia("(min-width: 810px) and (max-width: 1020px)").matches) {
       setActivityPerPage(4)
+    } else if (window.matchMedia("(min-width: 1020px) and (max-width: 1376px)").matches) {
+      setActivityPerPage(4)
+    } else if (window.matchMedia("(min-width: 760px) and (max-width: 810px)").matches) {
+      setActivityPerPage(4)
     }
   },[])
 

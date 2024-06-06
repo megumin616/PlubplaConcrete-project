@@ -19,6 +19,8 @@
 }
 .performance-detail-img img {
     margin-top: 12vh;
+    width: 400px;
+    height: 350px;
 }
 .performance-detail-content {
     margin: 1.5rem 2rem;
@@ -167,7 +169,7 @@
         justify-content: space-around;
     }
     .performance-detail-img img {
-        max-width: 300px;
+        width: 300px;
         height: auto;
     }
 }

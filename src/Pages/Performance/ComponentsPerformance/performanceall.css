@@ -55,6 +55,11 @@
     box-shadow: 5px 5px 15px 2px gray;
 }
 
+.performance img {
+    width: 350px;
+    height: 350px;
+}
+
 .performance h2 {
     text-align: start;
 }
@@ -179,8 +184,8 @@
         /* margin: 0.5rem; */
         margin: 0 1.5rem;
         margin-top: 1.5rem;
-        max-width: 340px;
-        height: auto;
+        width: 340px;
+        height: 347px;
     }
     .performance h2 {
         font-size: 20px;
