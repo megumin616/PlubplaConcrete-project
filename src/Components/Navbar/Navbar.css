@@ -127,6 +127,7 @@
     }
     .navbar {
         z-index: 9999;
+        /* height: 8vh; */
     }
 }
 
@@ -140,6 +141,9 @@
 @media only screen and (max-width: 431px) {
     .navbar-list-text {
         z-index: 999;
+    }
+    .navbar {
+        height: 9vh;
     }
 }
 
