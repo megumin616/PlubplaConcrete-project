@@ -53,7 +53,6 @@ export default function Contact() {
           ></iframe>
 
 
-          {/* ไว้มาทำใหม่ในส่วนนี้  */}
 
 
           <div className="box-1"></div>

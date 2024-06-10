@@ -7,7 +7,7 @@ import { getAuth } from "firebase/auth";
 
 
 const firebaseConfig = {
-  // apiKey: process.env.REACT_APP_API_KEY,
+  // apiKey: apiKey,
   apiKey: "AIzaSyCef7OQIvF49VsYvDb7BpJEK16L__Osju8",
   authDomain: "project-plubplaconcrete.firebaseapp.com",
   projectId: "project-plubplaconcrete",

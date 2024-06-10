@@ -12,24 +12,31 @@ import { StyleContext } from "../../../App";
 
 export default function ActivityAll() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [activityPerPage, setActivityPerPage] = useState(6)
+  const [activityPerPage, setActivityPerPage] = useState(6);
   const [activity, setActivity] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   // const {setStyleNavFixed} = useContext(StyleContext);
-  
-  useEffect(() => {
-    if (window.matchMedia("(min-width: 319px) and (max-width: 431px)").matches) {
-      setActivityPerPage(4)
-    } else if (window.matchMedia("(min-width: 810px) and (max-width: 1020px)").matches) {
-      setActivityPerPage(4)
-    } else if (window.matchMedia("(min-width: 1020px) and (max-width: 1376px)").matches) {
-      setActivityPerPage(4)
-    } else if (window.matchMedia("(min-width: 760px) and (max-width: 810px)").matches) {
-      setActivityPerPage(4)
-    }
-  },[])
 
+  useEffect(() => {
+    if (
+      window.matchMedia("(min-width: 319px) and (max-width: 431px)").matches
+    ) {
+      setActivityPerPage(4);
+    } else if (
+      window.matchMedia("(min-width: 810px) and (max-width: 1020px)").matches
+    ) {
+      setActivityPerPage(4);
+    } else if (
+      window.matchMedia("(min-width: 1020px) and (max-width: 1376px)").matches
+    ) {
+      setActivityPerPage(4);
+    } else if (
+      window.matchMedia("(min-width: 760px) and (max-width: 810px)").matches
+    ) {
+      setActivityPerPage(4);
+    }
+  }, []);
 
   //ดึงข้อมูลมาแสดง
   useEffect(() => {
@@ -65,7 +72,6 @@ export default function ActivityAll() {
     img: item.img1,
   }));
 
-
   const indexOfLastActivity = currentPage * activityPerPage;
   const indexOfFirstActivity = indexOfLastActivity - activityPerPage;
 
@@ -94,47 +100,53 @@ export default function ActivityAll() {
 
   return (
     <>
-      <div className="section-activity-all">
-        <h1 className="section-text">กิจกรรมของเรา</h1>
-        <div className="section-activity-all-container">
-        <h1 className="section-text-h1">กิจกรรมทั้งหมด</h1>
-          <div className="container-activities">
-            {currentActivities.map((activities) => (
-              <div className="activity" key={activities.id} onClick={() => {
-                navigate(`/activitydetail/${activities.id}`);
-                // handleNavFixed();
-              }}>
-                <img src={activities.img} />
-                <h2>{activities.title}</h2>
-                <p>{activities.date}</p>
-              </div>
-            ))}
+      <div className="section-activity-main">
+        <div className="section-activity-all">
+          <h1 className="section-text">กิจกรรมของเรา</h1>
+            <h1 className="section-text-h1">กิจกรรมทั้งหมด</h1>
+          <div className="section-activity-all-container">
+            <div className="container-activities">
+              {currentActivities.map((activities) => (
+                <div
+                  className="activity"
+                  key={activities.id}
+                  onClick={() => {
+                    navigate(`/activitydetail/${activities.id}`);
+                    // handleNavFixed();
+                  }}
+                >
+                  <img src={activities.img} />
+                  <h2>{activities.title}</h2>
+                  <p>{activities.date}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className="section-activity-pagination">
-            <div className="pagination">
-              <button onClick={handlePrevPage} disabled={currentPage === 1}>
-                Prev
-              </button>
+          <div className="pagination">
+            <button onClick={handlePrevPage} disabled={currentPage === 1}>
+              Prev
+            </button>
 
-              {[...Array(totalPages).keys()].map((page) => (
-                <button
-                  className="activity-button-number"
-                  key={page + 1}
-                  onClick={() => handlePageClick(page + 1)}
-                >
-                  {page + 1}
-                </button>
-              ))}
-
+            {[...Array(totalPages).keys()].map((page) => (
               <button
-                onClick={handleNextPage}
-                disabled={currentPage === totalPages}
+                className="activity-button-number"
+                key={page + 1}
+                onClick={() => handlePageClick(page + 1)}
               >
-                Next
+                {page + 1}
               </button>
-            </div>
+            ))}
+
+            <button
+              onClick={handleNextPage}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
           </div>
+        </div>
       </div>
     </>
   );
