@@ -13,6 +13,11 @@ import map from "../../assets/Images/Background/google-map.png";
 
 export default function Contact() {
 
+  const facebookFuncion = () => {
+    const url = 'https://www.facebook.com/plubplaconcrete'; 
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <>
       <Navbar />
@@ -22,7 +27,7 @@ export default function Contact() {
           <h1>ติดต่อเรา</h1>
           <div>
             <img src={icon1} />
-            <a>Facebook: พลับพลาคอนกรีต</a>
+            <a onClick={facebookFuncion} style={{cursor: "pointer"}}>Facebook: พลับพลาคอนกรีต</a>
           </div>
           <div>
             <img src={icon2} />
